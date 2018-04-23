@@ -1,0 +1,34 @@
+@model DXWebApplication1.DemoModel
+@Html.DevExpress().GridView(settings => {
+    settings.Name = "grid";
+    settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+    settings.CommandColumn.Visible = true;
+    settings.CommandColumn.ShowClearFilterButton = true;
+    
+    settings.Columns.Add("Name", "Product");
+    settings.Columns.Add(c => {
+        c.FieldName = "Price";
+        c.ColumnType = MVCxGridViewColumnType.TextBox;
+        ((TextBoxProperties)c.PropertiesEdit).DisplayFormatString = "c";
+    });
+    settings.Columns.Add("Quantity");
+    settings.Columns.Add(c => {
+        c.FieldName = "CategoryID";
+        c.Caption = "Category";
+        c.ColumnType = MVCxGridViewColumnType.ComboBox;
+
+        var comboBoxProperties = (ComboBoxProperties)c.PropertiesEdit;
+        comboBoxProperties.DataSource = Model.Categories;
+        comboBoxProperties.ValueField = "ID";
+        comboBoxProperties.ValueType = typeof(int);
+        comboBoxProperties.TextField = "Name";
+
+        c.SetFilterTemplateContent(t => {
+            ViewBag.FilterTemplateContainer = t;
+            Html.RenderPartial("ComboBoxPartial", Model);
+        });
+    });
+
+    settings.Settings.ShowFilterRow = true;
+}).Bind(Model.Products).GetHtml()
