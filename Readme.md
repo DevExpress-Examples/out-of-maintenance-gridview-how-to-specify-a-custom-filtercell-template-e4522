@@ -1,3 +1,12 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/DXWebApplication1/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/DXWebApplication1/Controllers/HomeController.vb))
+* [DataProvider.cs](./CS/DXWebApplication1/Models/DataProvider.cs) (VB: [DataProvider.vb](./VB/DXWebApplication1/Models/DataProvider.vb))
+* [ComboBoxPartial.cshtml](./CS/DXWebApplication1/Views/Home/ComboBoxPartial.cshtml)
+* **[GridViewPartial.cshtml](./CS/DXWebApplication1/Views/Home/GridViewPartial.cshtml)**
+* [Index.cshtml](./CS/DXWebApplication1/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # GridView - How to specify a custom FilterCell Template
 
 
