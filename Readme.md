@@ -9,7 +9,7 @@
 <!-- default file list end -->
 # GridView - How to specify a custom FilterCell Template
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e4522)**
+**[[Run Online]](https://codecentral.devexpress.com/e4522/)**
 <!-- run online end -->
 
 
